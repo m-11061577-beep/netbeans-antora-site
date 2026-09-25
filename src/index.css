@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #05070a;
+  color: #e6edf3;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(249, 115, 22, 0.4);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0d12;
+}
+::-webkit-scrollbar-thumb {
+  background: #273244;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 30%, transparent 75%);
+}
+
+.text-gradient-ember {
+  background: linear-gradient(135deg, #ffb56b 0%, #f97316 45%, #ea580c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-steel {
+  background: linear-gradient(160deg, rgba(26, 34, 48, 0.55), rgba(10, 13, 18, 0.9));
+  border: 1px solid rgba(39, 50, 68, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.card-steel:hover {
+  border-color: rgba(249, 115, 22, 0.35);
+}
+
+.btn-ember {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  box-shadow: 0 0 24px rgba(249, 115, 22, 0.35);
+  transition: all 0.2s ease;
+}
+.btn-ember:hover {
+  box-shadow: 0 0 40px rgba(249, 115, 22, 0.55);
+  transform: translateY(-1px);
+}
+.btn-ember:active {
+  transform: translateY(0);
+}
+
+.btn-ghost {
+  border: 1px solid rgba(39, 50, 68, 0.8);
+  transition: all 0.2s ease;
+}
+.btn-ghost:hover {
+  border-color: rgba(249, 115, 22, 0.5);
+  background: rgba(249, 115, 22, 0.08);
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+.animate-scanline {
+  animation: scanline 1.4s linear infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+  70% { box-shadow: 0 0 0 16px rgba(249, 115, 22, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+}
+.animate-pulse-ring {
+  animation: pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float-slow {
+  animation: float-slow 5s ease-in-out infinite;
+}
